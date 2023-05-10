@@ -8,9 +8,3 @@ def uppercase(str):
         else:
             print("{:c}".format(ord(str[i])),
                   end="\n" if (i == (len(str) - 1)) else "")
-            
-
-uppercase("Best")
-uppercase("best")
-uppercase("MclcaC")
-uppercase("cMca")
