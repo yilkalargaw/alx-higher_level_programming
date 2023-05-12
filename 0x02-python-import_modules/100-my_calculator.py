@@ -8,7 +8,18 @@ if __name__ == "__main__":
     if len(sys.argv) != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
-    elif sys.argv[2] in operators:
+    try:
+        int(sys.argv[1])
+    except ValueError:
+        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
+        sys.exit(1)
+    try:
+        int(sys.argv[3])
+    except ValueError:
+        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
+        sys.exit(1)
+
+    if sys.argv[2] in operators:
         a = int(sys.argv[1])
         b = int(sys.argv[3])
         expr = "{} {} {}".format(a, sys.argv[2], b)
