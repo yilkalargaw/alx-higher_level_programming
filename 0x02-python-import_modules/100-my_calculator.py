@@ -11,7 +11,7 @@ if __name__ == "__main__":
     elif sys.argv[2] in operators:
         a = int(sys.argv[1])
         b = int(sys.argv[3])
-        expr = "{} {} {}".format(a, sys.argv[2] , b)
+        expr = "{} {} {}".format(a, sys.argv[2], b)
         print("{} = {}".format(expr, eval(expr)))
     else:
         print("Unknown operator. Available operators: +, -, * and /")
