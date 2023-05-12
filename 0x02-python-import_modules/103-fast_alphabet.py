@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-print(*map(lambda x: chr(x), range(65, 91)), sep=chr(0))
+print(*map(lambda x: chr(x), range(65, 91)), sep='')
