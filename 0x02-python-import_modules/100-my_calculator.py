@@ -23,7 +23,11 @@ if __name__ == "__main__":
         a = int(sys.argv[1])
         b = int(sys.argv[3])
         expr = "{} {} {}".format(a, sys.argv[2], b)
-        print("{} = {}".format(expr, eval(expr)))
+        if sys.argv[2] == "/":
+            result = a // b
+        else:
+            result = eval(expr)
+        print("{} = {}".format(expr, result))
     else:
         print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
