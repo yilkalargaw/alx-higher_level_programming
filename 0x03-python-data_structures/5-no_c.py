@@ -1,3 +1,3 @@
 #!/usr/bin/python3
 def no_c(my_string):
-    return "".join([x for x in my_string if x.lower() != "c"])
+    return "".join([i for i in my_string if i.lower() != "c"])
