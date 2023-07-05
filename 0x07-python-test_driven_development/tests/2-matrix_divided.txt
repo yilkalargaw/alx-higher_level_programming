@@ -36,3 +36,49 @@ Test basic division:
 	>>> mat_div(m1, -0.1)
 	[[-0.1, -0.2, -0.3], [-0.1, -0.2, -0.3], [-0.1, -0.2, -0.3]]
 
+Test type errors:
+
+	>>> mat_div(m1, 0)
+	Traceback (most recent call last):
+	ZeroDivisionError: division by zero
+
+	>>> mat_div(m1, (1, 2, 3))
+	Traceback (most recent call last):
+		...
+	TypeError: div must be a number
+
+	>>> mat_div(m1, "string")
+	Traceback (most recent call last):
+		...
+	TypeError: div must be a number
+
+Test row sizes:
+
+	>>> mat_div([[1, 2, 3], [2, 3], [1]], 10)
+	Traceback (most recent call last):
+		...
+	TypeError: Each row of the matrix must have the same size
+
+Test empty matrix:
+
+	>>> mat_div([[]], 1)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+	>>> mat_div([[], []], 2)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test argument numbers:
+
+	>>> mat_div(m1)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+	>>> mat_div(m1, 1, 2, 3)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix_divided() takes 2 positional arguments but 4 were given
