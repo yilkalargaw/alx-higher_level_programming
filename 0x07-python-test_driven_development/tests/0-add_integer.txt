@@ -1,0 +1,53 @@
+Test cases
+==========
+
+Testing for when basic addition:
+
+	>>> add_integer(4, 4)
+	8
+
+Testing zero addtion:
+
+	>>> add_integer(0, 5)
+	5
+
+	>>> add_integer(5, 0)
+	5
+
+Testing negative addition onesided:
+	>>> add_integer(-1, 3)
+	2
+
+	>>> add_integer(-3, 1)
+	-2
+
+Testing negative addition twosided:
+	>>> add_integer(-1, -3)
+	-4
+
+	>>> add_integer(-3, -1)
+	-4
+
+Testing large number addition one_sided:
+	>>> add_integer(9999999999999999999999999999999999999999999999999, 2)
+	10000000000000000000000000000000000000000000000001
+
+	>>> add_integer(2, 9999999999999999999999999999999999999999999999999)
+	10000000000000000000000000000000000000000000000001
+
+Testing large number addition two_sided:
+	>>> add_integer(10000000000000000000000000000000000000000000000001, 10000000000000000000000000000000000000000000000001)
+	20000000000000000000000000000000000000000000000002
+
+
+Testing float inputs one_sided:
+	>>> add_integer(1.5, 1)
+	2
+
+	>>> add_integer(1, 1.5)
+	2
+
+Testing float inputs two_sided:
+	>>> add_integer(1.5, 1.5)
+	2
+
