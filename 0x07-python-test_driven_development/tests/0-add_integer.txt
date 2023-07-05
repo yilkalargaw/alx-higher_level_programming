@@ -1,3 +1,17 @@
+Import add_integer
+======================================
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+Verify Documentation
+=============
+	>>> mod_doc = __import__("0-add_integer").add_integer.__doc__
+	>>> print(len(mod_doc) > 0)
+	True
+
+	>>> fun_doc = __import__("0-add_integer").add_integer.__doc__
+	>>> print(len(fun_doc) > 0)
+	True
+
 Test cases
 ==========
 
@@ -50,3 +64,31 @@ Testing float inputs two_sided:
 	>>> add_integer(1.5, 1.5)
 	2
 
+Testing type errors
+	>>> add_integer("World", 10)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+	>>> add_integer(10, "World"")
+	Traceback (most recent call last):
+	TypeError: b must be an integer
+
+	>>> add_integer( [1, 2, 3], 3.45)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+	>>> add_integer(3.45, (1, 2, 3)
+	Traceback (most recent call last):
+	TypeError: b must be an integer
+
+	>>> add_integer( (1, 2, 3), 3.45)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+	>>> add_integer(False, 8)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+	>>> add_integer(5, True)
+	Traceback (most recent call last):
+	TypeError: b must be an integer
