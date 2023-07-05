@@ -1,9 +1,9 @@
 Import add_integer
-======================================
+==================
 	>>> add_integer = __import__('0-add_integer').add_integer
 
 Verify Documentation
-=============
+====================
 	>>> mod_doc = __import__("0-add_integer").add_integer.__doc__
 	>>> print(len(mod_doc) > 0)
 	True
