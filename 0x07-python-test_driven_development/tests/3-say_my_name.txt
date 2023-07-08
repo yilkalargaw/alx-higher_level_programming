@@ -1,0 +1,90 @@
+Import say_my_name
+===================
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Verify Documentation
+=====================
+
+	>>> mod_doc = __import__('3-say_my_name').__doc__
+	>>> print(len(mod_doc) > 0)
+	True
+
+	>>> fun_doc = __import__('3-say_my_name').say_my_name.__doc__
+	>>> print(len(fun_doc) > 0)
+	True
+
+Test cases
+==========
+
+Test basic name:
+
+	>>> say_my_name("Jack", "Bower")
+	My name is Jack Bower
+
+	>>> say_my_name("Some", "Body")
+	My name is Jack Bower
+
+Test single string:
+
+	>>> say_my_name("Linus")
+	My name is Linus 
+
+Test musk case aka weired but validname:
+
+	>>> say_my_name("Sum", "41")
+	My name is Sum 41
+
+	>>> say_my_name("9a$$", "w0rd")
+	My name is 9a$$ w0rd
+
+
+Test when NONE is passed left:
+
+	>>> say_my_name(None, "Body")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+Test when NONE is passed right:
+
+	>>> say_my_name("Some", None)
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
+
+Test passing non strings left:
+
+	>>> say_my_name(43, "Body")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+	>>> say_my_name(["s", "o", "m", "e"], "322")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+Test passing non strings right:
+
+	>>> say_my_name("Body", 43)
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+	>>> say_my_name(322, ["B", "o", "d", "y"] )
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+
+Test passing non strings both:
+
+	>>> say_my_name(["sum"], ["41"])
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+Test Missing args:
+
+	>>> say_my_name()
+	Traceback (most recent call last):
+	TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+Test More than 2 args:
+
+	>>> say_my_name("Jack", "and", "Jill")
+	Traceback (most recent call last):
+	TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
