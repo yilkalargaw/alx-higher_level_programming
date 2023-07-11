@@ -1,0 +1,39 @@
+Import 1-my_list
+=================
+	>>> MyList = __import__('1-my_list').MyList
+
+Verify Documentation
+====================
+	>>> mod_doc = __import__("1-my_list").__doc__
+	>>> print(len(mod_doc) > 0)
+	True
+
+Test cases
+==========
+
+sorted print in positive nums:
+	>>> dalist = MyList() + [1, 2, 3, 4, 5, 6]
+
+	>>> dalist.print_sorted()
+	[1, 2, 3, 4, 5, 6]
+
+sorted print in negative nums:
+	>>> dalist = MyList() + [-1, -2, -3, -4, -5, -6]
+
+	>>> dalist.print_sorted()
+	[-6, -5, -4, -3, -2, -1]
+
+sorted print an empty list:
+	>>> dalist = MyList()
+	>>> dalist.print_sorted()
+	[]
+
+sorted print a single positive number:
+	>>> dalist = MyList() + [1]
+	>>> dalist.print_sorted()
+	[1]
+
+sorted print a single negative number:
+	>>> dalist = MyList() + [-1]
+	>>> dalist.print_sorted()
+	[-1]
