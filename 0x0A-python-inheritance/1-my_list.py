@@ -5,7 +5,6 @@
 class MyList(list):
     """A class"""
 
-
     def print_sorted(self):
         """Returns a list with the available
         attributes and methods in an object
