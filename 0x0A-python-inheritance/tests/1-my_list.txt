@@ -19,9 +19,13 @@ sorted print in positive nums:
 
 sorted print in negative nums:
 	>>> dalist = MyList() + [-1, -2, -3, -4, -5, -6]
-
 	>>> dalist.print_sorted()
 	[-6, -5, -4, -3, -2, -1]
+
+sorted print in mixed positive and negative nums:
+	>>> dalist = MyList() + [1, 2, 3, -4, -5, -6]
+	>>> dalist.print_sorted()
+	[-6, -5, -4, 1, 2, 3]
 
 sorted print an empty list:
 	>>> dalist = MyList()
