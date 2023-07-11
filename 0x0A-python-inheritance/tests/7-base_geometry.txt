@@ -1,0 +1,18 @@
+Import 7-base_geometry
+=============================
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Test cases
+==========
+
+Now test it:
+
+    >>> tmp = BaseGeometry()
+    
+    >>> tmp.integer_validator("somevar", 12)
+
+    >>> tmp.integer_validator("othervar", 89)
+
+    >>> tmp.area()
+    Traceback (most recent call last):
+    Exception: area() is not implemented
