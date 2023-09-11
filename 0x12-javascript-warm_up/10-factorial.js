@@ -1,6 +1,6 @@
 #!/usr/bin/node
 function factorial(x) {
-  if (x < 0 || x = NaN) {
+  if (x < 0 || isNaN(x)) {
     return 1;
   }
   let result = 1;
