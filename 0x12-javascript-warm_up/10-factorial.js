@@ -1,3 +1,4 @@
+#!/usr/bin/node
 function factorial(x) {
   var memo = {};
   function factorial(n) {
