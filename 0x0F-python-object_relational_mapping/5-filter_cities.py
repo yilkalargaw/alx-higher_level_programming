@@ -24,7 +24,3 @@ if __name__ == '__main__':
     states = select_states()
     for state in states:
         print(state)
-"SELECT cities.name, states.name \
-                 FROM cities, states \
-                 WHERE states.name = %s AND \
-                 states.id = cities.state_id;"
