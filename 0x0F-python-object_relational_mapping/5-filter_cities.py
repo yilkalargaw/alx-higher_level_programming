@@ -15,12 +15,15 @@ if __name__ == '__main__':
                              db=sys.argv[3])
 
         with db.cursor() as cursor:
-            cursor.execute("SELECT cities.name, states.name \
-                 FROM cities, states \
-                 WHERE states.name = %s AND \
-                 states.id = cities.state_id;", (sys.argv[4],))
+            cursor.execute("SELECT cities.name\
+                FROM cities LEFT JOIN states\
+                ON states.id = cities.state_id\
+                WHERE states.name = %s\
+                ORDER BY cities.id ASC", (sys.argv[4],))
             return cursor.fetchall()
 
+        print(", ".join([i[0] for i in states]))
+        cursor.close()
+        db.close()
+
     states = select_states()
-    for state in states:
-        print(state)
