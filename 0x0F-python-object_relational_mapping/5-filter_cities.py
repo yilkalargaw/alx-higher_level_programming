@@ -22,8 +22,5 @@ if __name__ == '__main__':
                 ORDER BY cities.id ASC", (sys.argv[4],))
             return cursor.fetchall()
 
-        print(", ".join([i[0] for i in states]))
-        cursor.close()
-        db.close()
-
     states = select_states()
+    print(", ".join([i[0] for i in states]))
